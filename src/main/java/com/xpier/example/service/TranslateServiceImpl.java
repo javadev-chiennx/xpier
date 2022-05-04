@@ -9,7 +9,6 @@ import com.xpier.example.reposiroty.WordRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 
@@ -29,7 +28,6 @@ public class TranslateServiceImpl implements TranslateService {
     private final WordRepository wordRepository;
 
     @Override
-    @Transactional
     public Mono<TranslateResponse> getTranslations(String langCode, String wordId) {
         /*Call oxford API*/
         return oxfordWebClient.get().uri("/entries/{langCode}/{wordId}", langCode, wordId)
