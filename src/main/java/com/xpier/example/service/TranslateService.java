@@ -5,5 +5,5 @@ import reactor.core.publisher.Mono;
 
 public interface TranslateService {
 
-    TranslateResponse getTranslations(String langCode, String wordId);
+    Mono<TranslateResponse> getTranslations(String langCode, String wordId);
 }
