@@ -14,7 +14,7 @@ public class Vocabulary {
 
     private String word;
 
-    private List<String> examples;
+    private List<Eg> examples;
 
     private String audioUrl;
 
