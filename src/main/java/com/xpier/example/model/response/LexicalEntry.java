@@ -9,8 +9,6 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class LexicalEntry {
 
-    private String text;
-
     private LexicalCategory lexicalCategory;
 
     private List<Entry> entries;

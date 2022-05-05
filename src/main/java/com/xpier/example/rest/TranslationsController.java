@@ -1,6 +1,7 @@
 package com.xpier.example.rest;
 
 import com.xpier.example.model.response.TranslateResponse;
+import com.xpier.example.model.response.Vocabulary;
 import com.xpier.example.service.TranslateService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +17,7 @@ public class TranslationsController extends AbstractController {
     private final TranslateService service;
 
     @GetMapping(value = "/translations")
-    public ResponseEntity<Mono<TranslateResponse>> getTranslations(@RequestParam String langCode, @RequestParam String wordId) {
+    public ResponseEntity<Mono<Vocabulary>> getTranslations(@RequestParam String langCode, @RequestParam String wordId) {
         return ResponseEntity.ok(service.getTranslations(langCode, wordId));
     }
 }
