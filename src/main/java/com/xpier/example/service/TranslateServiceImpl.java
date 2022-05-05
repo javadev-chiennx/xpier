@@ -30,11 +30,11 @@ public class TranslateServiceImpl implements TranslateService {
 
     /**
      * This is example get translations from Oxford APIs
-     * @author chiennx
-     * @param langCode Language code
-     * @param wordId Text search
      *
-     * */
+     * @param langCode Language code
+     * @param wordId   Text search
+     * @author chiennx
+     */
 
     @Override
     public Mono<TranslateResponse> getTranslations(String langCode, String wordId) {
@@ -46,9 +46,9 @@ public class TranslateServiceImpl implements TranslateService {
                     /*Get current user demo*/
                     var currentUser = userRepository.findById(1L).orElseThrow(() -> new BusinessException(ErrorCode.USER_NOT_FOUND));
                     /*Save tag search into mongo DB.*/
-                    var word = wordRepository.findByWord(item.getWord());
+                    var word = wordRepository.findByWord(wordId);
                     if (word == null) {
-                        wordRepository.insert(new Word(sequenceGeneratorService.generateSequence(Word.SEQUENCE_NAME), item.getWord(), Set.of(currentUser)));
+                        wordRepository.insert(new Word(sequenceGeneratorService.generateSequence(Word.SEQUENCE_NAME), wordId, Set.of(currentUser)));
                     } else {
                         var users = word.getUsers();
                         if (!users.contains(currentUser)) {

@@ -17,7 +17,6 @@ public class TranslationsController extends AbstractController {
 
     @GetMapping(value = "/translations")
     public ResponseEntity<Mono<TranslateResponse>> getTranslations(@RequestParam String langCode, @RequestParam String wordId) {
-        var result = service.getTranslations(langCode, wordId);
-        return ResponseEntity.ok(result);
+        return ResponseEntity.ok(service.getTranslations(langCode, wordId));
     }
 }
