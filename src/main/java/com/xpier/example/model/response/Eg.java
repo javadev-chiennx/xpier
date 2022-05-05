@@ -5,7 +5,7 @@ import lombok.Getter;
 @Getter
 public class Eg {
 
-    private String type;
+    private String category;
 
     private String example;
 }

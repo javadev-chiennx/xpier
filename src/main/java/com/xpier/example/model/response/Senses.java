@@ -9,9 +9,5 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Senses {
 
-    private List<String> definitions;
-
     private List<Example> examples;
-
-
 }
