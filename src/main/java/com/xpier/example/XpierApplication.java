@@ -6,11 +6,13 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.time.Instant;
 import java.util.Date;
 
 @SpringBootApplication
+@EnableSwagger2
 @RequiredArgsConstructor
 public class XpierApplication implements CommandLineRunner {
 
