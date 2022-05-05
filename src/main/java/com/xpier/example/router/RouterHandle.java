@@ -1,3 +1,4 @@
+/*
 package com.xpier.example.router;
 
 import com.xpier.example.model.response.TranslateResponse;
@@ -6,10 +7,11 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.ServerResponse;
 
-import static org.springframework.web.reactive.function.server.RequestPredicates.GET;
+import static org.springframework.web.reactive.function.server.RequestPredicates.*;
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
 import static org.springframework.web.reactive.function.server.ServerResponse.ok;
 
@@ -24,7 +26,7 @@ public class RouterHandle {
 
     @Bean
     public RouterFunction<ServerResponse> functionalRoutes() {
-        return route(GET(baseUrl + "/translations"),
+        return route(GET(baseUrl + "/translations").and(accept(MediaType.APPLICATION_JSON)),
                 request -> {
                     var langCode = request.queryParam("langCode").orElse(null);
                     var wordId = request.queryParam("wordId").orElse(null);
@@ -33,3 +35,4 @@ public class RouterHandle {
         );
     }
 }
+*/

@@ -27,6 +27,15 @@ public class TranslateServiceImpl implements TranslateService {
 
     private final WordRepository wordRepository;
 
+
+    /**
+     * This is example get translations from Oxford APIs
+     * @author chiennx
+     * @param langCode Language code
+     * @param wordId Text search
+     *
+     * */
+
     @Override
     public Mono<TranslateResponse> getTranslations(String langCode, String wordId) {
         /*Call oxford API*/
